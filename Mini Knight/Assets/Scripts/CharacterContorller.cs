@@ -6,7 +6,7 @@ public class CharacterContorller : MonoBehaviour
 {
     public float walkSpeed  = 2f;
     public float sprintSpeed = 4f;
-    public float normalSpeed ;
+    public float normalSpeed;
     public float jumpForce = 2f;
     private int maxJumps = 2;
 
@@ -20,7 +20,6 @@ public class CharacterContorller : MonoBehaviour
     
     void Update()
     {
-        
         if(Input.GetKey(KeyCode.A))
         {
             transform.Translate(Vector3.left * normalSpeed * Time.deltaTime);
@@ -50,26 +49,24 @@ public class CharacterContorller : MonoBehaviour
             normalSpeed = walkSpeed;
         }
 
-    }
-
-    public void Jump()
-    {
-        if(maxJumps > 0)
-        {
-            GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
-            maxJumps--;
-        }
-        if(maxJumps ==0)
-        {
-            return;
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if(other.gameObject.tag == "Ground")
+        if(GroundCheck.instanceGroundCheck.isGrounded == true)
         {
             maxJumps = 2;
         }
     }
+
+    public void Jump()
+    {
+            if(maxJumps > 0)
+            {  
+                GetComponent<Rigidbody2D>().velocity = Vector2.up * jumpForce;
+                maxJumps--;
+            }
+            if(maxJumps ==0)
+            {
+                return;
+            }
+    }
+
+
 }
