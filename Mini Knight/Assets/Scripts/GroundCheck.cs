@@ -19,6 +19,7 @@ public class GroundCheck : MonoBehaviour
         if (collision.gameObject.tag == "Ground")
         {
             isGrounded = true;
+            CharacterContorller.instanceController.extraJumps = 2;
         }
         else
         {

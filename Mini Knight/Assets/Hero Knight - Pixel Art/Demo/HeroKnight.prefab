@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2900218875308588589}
   - component: {fileID: 827722496337519530}
+  - component: {fileID: 1799554900776368103}
   m_Layer: 0
   m_Name: GroundSensor
   m_TagString: Untagged
@@ -47,6 +48,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1}
   serializedVersion: 2
   m_Radius: 0.05
+--- !u!114 &1799554900776368103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 111755813442870902}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a779b46608033a8409806ff4224153b6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  groundCheck: {fileID: 111755813442870902}
+  isGrounded: 0
 --- !u!1 &6323719953710832613
 GameObject:
   m_ObjectHideFlags: 0
@@ -99,6 +114,7 @@ MonoBehaviour:
   sprintSpeed: 4
   normalSpeed: 0
   jumpForce: 2
+  extraJumps: 2
   sp: {fileID: 2954181336601895002}
 --- !u!95 &2655505060201611074
 Animator:
